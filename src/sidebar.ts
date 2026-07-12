@@ -15,8 +15,8 @@ const openCloseBtnSvgs = openCloseBarBtn.querySelectorAll('svg');
 
 const navBoxHeadText = <HTMLHeadingElement>document.querySelector('.nav-box-head');
 // Navigation options box
-const navOptionButtons: unknown = document.querySelectorAll('.nav-option-button');
-const navOptionLabels: unknown = document.querySelectorAll('.nav-option-label');
+const sideOptionButtons: unknown = document.querySelectorAll('.sidebar-option-button');
+const sideOptionLabels: unknown = document.querySelectorAll('.sidebar-option-label');
 
 function openSidebar(): void {
     sidebarMain.style.width = '250px';
@@ -29,14 +29,14 @@ function openSidebar(): void {
     menuLogos[0].style.display = 'block';
     menuAppName.style.display = 'block';
     navBoxHeadText.style.display = 'block';
-    (<[]>navOptionButtons).forEach((element: HTMLButtonElement): void => {
+    (<[]>sideOptionButtons).forEach((element: HTMLButtonElement): void => {
         element.style.width = '210px';
         element.style.padding = '0 10px';
         element.style.justifyContent = 'flex-start';
         element.style.columnGap = '5px';
         element.style.borderRadius = '10px';
     });
-    (<[]>navOptionLabels).forEach((element: HTMLButtonElement): void => {
+    (<[]>sideOptionLabels).forEach((element: HTMLButtonElement): void => {
         element.style.display = 'block';
     });
     localStorage.setItem('sideBarOpen', 'true');
@@ -52,7 +52,7 @@ function closeSidebar(): void {
     openCloseBtnSvgs[1].style.display = 'none';
     menuLogos[1].style.display = 'block';
     navBoxHeadText.style.display = 'none';
-    (<[]>navOptionButtons).forEach((element: HTMLButtonElement): void => {
+    (<[]>sideOptionButtons).forEach((element: HTMLButtonElement): void => {
         element.style.width = '35px';
         element.style.padding = '0';
         element.style.justifyContent = 'center';
@@ -60,7 +60,7 @@ function closeSidebar(): void {
         element.style.borderRadius = '50%';
         
     });
-    (<[]>navOptionLabels).forEach((element: HTMLButtonElement): void => {
+    (<[]>sideOptionLabels).forEach((element: HTMLButtonElement): void => {
         element.style.display = 'none';
     });
     localStorage.setItem('sideBarOpen', 'false');
@@ -99,7 +99,7 @@ openCloseBarBtn.addEventListener('mouseleave', (): void => {
 });
 
 // Navigation buttons tooltips
-(navOptionButtons as []).forEach((element: HTMLButtonElement): void => {
+(sideOptionButtons as []).forEach((element: HTMLButtonElement): void => {
     const tip = <HTMLSpanElement>element.querySelector('.tooltip');
     element.addEventListener('mouseover', (): void => {
         if (sidebarMain.style.width === '45px') {
@@ -109,11 +109,36 @@ openCloseBarBtn.addEventListener('mouseleave', (): void => {
     });
 });
 
-(navOptionButtons as []).forEach((element: HTMLButtonElement): void => {
+(sideOptionButtons as []).forEach((element: HTMLButtonElement): void => {
     const tip = <HTMLSpanElement>element.querySelector('.tooltip');
     element.addEventListener('mouseleave', (): void => {
         if (sidebarMain.style.width === '45px') {
             tip.style.display = 'none';
         }
     });
+});
+
+// Theme options box
+document.addEventListener('click', (event): void => {
+    const themeOptionsBox = <HTMLDivElement>document.querySelector('.theme-options-box');
+    const element = event.target as HTMLElement;
+
+    function sidebarStatus(): void {
+        if (sidebarMain.style.width === '45px') 
+            themeOptionsBox.style.left = '54px';
+        else 
+            themeOptionsBox.style.left = '260px';
+    }
+    
+    if (element.closest('.sidebar-theme-button')) {
+        if (themeOptionsBox.style.display === 'none') {
+            themeOptionsBox.style.display = 'block';
+            sidebarStatus();
+        } else {
+            themeOptionsBox.style.display = 'none';
+            sidebarStatus();
+        }
+    } else if (!element.closest('.theme-options-box')) {
+        themeOptionsBox.style.display = 'none';
+    }
 });

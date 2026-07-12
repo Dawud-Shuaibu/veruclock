@@ -106,7 +106,7 @@
     justify-self: center;
 }
 
-/* Navigation options box */
+/* Navigation and bottom options box */
 .nav-options-box {
     width: 100%;
     height: auto;
@@ -129,8 +129,8 @@
     transition: 200ms;
 }
 
-.nav-options-box .nav-option-label, 
-.bottom-options-box .nav-option-label {
+.nav-options-box .sidebar-option-label, 
+.bottom-options-box .sidebar-option-label {
     display: none;
     font-size: 1.3rem;
     font-weight: 600;
@@ -150,6 +150,77 @@
     row-gap: 10px;
 }
 
+/* Sidebar Color theme button hover effects */
+/* Light mode */
+.sidebar-theme-button svg:nth-child(2) {
+    display: none;
+}
+
+.sidebar-theme-button:hover svg:nth-child(1) {
+    display: none;
+}
+
+.sidebar-theme-button:hover svg:nth-child(2) {
+    display: block;
+}
+
+/* Darkmode */
+.darkmode .sidebar-theme-button svg:nth-child(2) {
+    display: block;
+}
+
+.darkmode .sidebar-theme-button svg:nth-child(1) {
+    display: none;
+}
+
+.darkmode .sidebar-theme-button:hover svg:nth-child(2) {
+    display: none;
+}
+
+.darkmode .sidebar-theme-button:hover svg:nth-child(1) {
+    display: block;
+}
+
+/* SVG's */
 .bottom-options-box svg {
     fill: #000;
+}
+
+/* Theme Options Box */
+.theme-options-box {
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: auto;
+    padding: 15px;
+    bottom: 9px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px -5px #000;
+    border-radius: 15px;
+}
+
+.theme-options-box h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.theme-options-box div {
+    width: 100%;
+    height: auto;
+    align-content: center;
+}
+
+.theme-options-box #default, 
+.theme-options-box #light, 
+.theme-options-box #dark {
+    appearance: auto;
+    margin: 10px 4px 0 0;
+    cursor: pointer;
+}
+
+.theme-options-box div label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
 }
