@@ -119,8 +119,8 @@ openCloseBarBtn.addEventListener('mouseleave', (): void => {
 });
 
 // Theme options box
+const themeOptionsBox = <HTMLDivElement>document.querySelector('.theme-options-box');
 document.addEventListener('click', (event): void => {
-    const themeOptionsBox = <HTMLDivElement>document.querySelector('.theme-options-box');
     const element = event.target as HTMLElement;
 
     function sidebarStatus(): void {
@@ -138,7 +138,7 @@ document.addEventListener('click', (event): void => {
             themeOptionsBox.style.display = 'none';
             sidebarStatus();
         }
-    } else if (!element.closest('.theme-options-box')) {
+    } else if (element.closest('.close-theme-box-btn')) {
         themeOptionsBox.style.display = 'none';
     }
 });

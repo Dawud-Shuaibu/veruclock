@@ -26,9 +26,6 @@
 
 /* Main sidebar style */
 .sidebar-main {
-    position: fixed;
-    top: 0;
-    left: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -223,4 +220,25 @@
     font-size: 1.4rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+/* Close theme options box button */
+.theme-options-box .close-theme-box-btn {
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    left: 145px;
+    bottom: 130px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: 200ms;
+}
+
+.theme-options-box .close-theme-box-btn:hover {
+    box-shadow: 0 0 10px -5px #000;
+}
+
+.close-theme-box-btn svg {
+    fill: #000;
 }
