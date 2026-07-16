@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0 20px -10px #000;
-    transition: 250ms;
+    transition: 150ms;
 }
 
 /* Top and bottom sidebar options boxes */
@@ -48,7 +48,7 @@
     margin: 10px 0;
     display: flex;
     align-items: center;
-    transition: 200ms;
+    transition: 150ms;
 }
 
 .sidebar-main .sidebar-topmenu div {
@@ -77,7 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 200ms;
+    transition: 150ms;
 }
 
 .open-close-sidebar-btn svg, 
@@ -86,7 +86,7 @@
 }
 
 .open-close-sidebar-btn:hover {
-    background-color: #00000021;
+    background-color: #0001;
 }
 
 .nav-box-head {
@@ -110,7 +110,7 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    transition: 200ms;
+    transition: 150ms;
 }
 
 .nav-options-box button, 
@@ -123,7 +123,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 200ms;
+    transition: 150ms;
 }
 
 .nav-options-box .sidebar-option-label, 
@@ -135,7 +135,7 @@
 
 .nav-options-box button:hover, 
 .bottom-options-box button:hover {
-    background-color: #00000021;
+    background-color: #0002;
 }
 
 /* Sidebar bottom options box */
@@ -149,32 +149,32 @@
 
 /* Sidebar Color theme button hover effects */
 /* Light mode */
-.sidebar-theme-button svg:nth-child(2) {
+.theme-button svg:nth-child(2) {
     display: none;
 }
 
-.sidebar-theme-button:hover svg:nth-child(1) {
+.theme-button:hover svg:nth-child(1) {
     display: none;
 }
 
-.sidebar-theme-button:hover svg:nth-child(2) {
+.theme-button:hover svg:nth-child(2) {
     display: block;
 }
 
 /* Darkmode */
-.darkmode .sidebar-theme-button svg:nth-child(2) {
+.darkmode .theme-button svg:nth-child(2) {
     display: block;
 }
 
-.darkmode .sidebar-theme-button svg:nth-child(1) {
+.darkmode .theme-button svg:nth-child(1) {
     display: none;
 }
 
-.darkmode .sidebar-theme-button:hover svg:nth-child(2) {
+.darkmode .theme-button:hover svg:nth-child(2) {
     display: none;
 }
 
-.darkmode .sidebar-theme-button:hover svg:nth-child(1) {
+.darkmode .theme-button:hover svg:nth-child(1) {
     display: block;
 }
 
@@ -220,25 +220,4 @@
     font-size: 1.4rem;
     font-weight: 500;
     cursor: pointer;
-}
-
-/* Close theme options box button */
-.theme-options-box .close-theme-box-btn {
-    position: absolute;
-    cursor: pointer;
-    padding: 5px;
-    left: 145px;
-    bottom: 130px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    transition: 200ms;
-}
-
-.theme-options-box .close-theme-box-btn:hover {
-    box-shadow: 0 0 10px -5px #000;
-}
-
-.close-theme-box-btn svg {
-    fill: #000;
 }

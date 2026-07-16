@@ -1,8 +1,3 @@
-window.onload = (): void => {
-    const sidebarStatus: string | null = localStorage.getItem('sideBarOpen');
-    sidebarStatus === 'true' ? openSidebar() : closeSidebar();
-};
-
 // Main sidebar element
 const sidebarMain = <HTMLHeadElement>document.querySelector('.sidebar-main');
 
@@ -13,8 +8,8 @@ const menuAppName = <HTMLParagraphElement>sideBarMenuBox.querySelector('p');
 const openCloseBarBtn = <HTMLButtonElement>document.querySelector('.open-close-sidebar-btn');
 const openCloseBtnSvgs = openCloseBarBtn.querySelectorAll('svg');
 
+// All other navigation button on the side bar
 const navBoxHeadText = <HTMLHeadingElement>document.querySelector('.nav-box-head');
-// Navigation options box
 const sideOptionButtons: unknown = document.querySelectorAll('.sidebar-option-button');
 const sideOptionLabels: unknown = document.querySelectorAll('.sidebar-option-label');
 
@@ -66,7 +61,7 @@ function closeSidebar(): void {
     localStorage.setItem('sideBarOpen', 'false');
 }
 
-// When open/close button clicked
+// Listen to the sidebar open/close button when clicked
 openCloseBarBtn.addEventListener('click', (): void => {
     if (sidebarMain.style.width === '45px') 
         openSidebar();
@@ -76,7 +71,6 @@ openCloseBarBtn.addEventListener('click', (): void => {
 
 // Open and close sidebar button hover effects and tooltip
 const openCloseBtnTip = <HTMLSpanElement>openCloseBarBtn.querySelector('span');
-
 openCloseBarBtn.addEventListener('mouseover', (): void => {
     if (sidebarMain.style.width === '45px') {
         menuLogos[1].style.display = 'none';
@@ -130,7 +124,7 @@ document.addEventListener('click', (event): void => {
             themeOptionsBox.style.left = '260px';
     }
     
-    if (element.closest('.sidebar-theme-button')) {
+    if (element.closest('.theme-button')) {
         if (themeOptionsBox.style.display === 'none') {
             themeOptionsBox.style.display = 'block';
             sidebarStatus();
@@ -138,7 +132,15 @@ document.addEventListener('click', (event): void => {
             themeOptionsBox.style.display = 'none';
             sidebarStatus();
         }
-    } else if (element.closest('.close-theme-box-btn')) {
+    } else if (!element.closest('.theme-options-box')) {
         themeOptionsBox.style.display = 'none';
     }
 });
+
+// Get the last sidebar status when the page loads
+const sidebarStatus: string | null = localStorage.getItem('sideBarOpen');
+switch (sidebarStatus)  {
+    case 'true': openSidebar(); break;
+    case 'false': closeSidebar(); break;
+    default: openSidebar();
+}
