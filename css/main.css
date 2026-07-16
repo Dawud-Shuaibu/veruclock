@@ -1,4 +1,4 @@
-main {
+body {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -6,7 +6,7 @@ main {
     justify-content: space-between;
 }
 
-#pages-display {
+main {
     flex-grow: 1;
     height: 100%;
     overflow: hidden auto;

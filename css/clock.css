@@ -6,3 +6,72 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.clock-tab {
+    background-color: rgba(0, 0, 0, 0.050);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+main .configs-div {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+main .configs-div label {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+main .configs-div .time-source-div, 
+main .configs-div .time-zone-div, 
+main .configs-div .time-format-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 7px;
+}
+
+main .configs-div #time-source, 
+main .configs-div #time-zone, 
+main .configs-div #time-format {
+    appearance: auto;
+    height: 40px;
+    box-shadow: 0 0 6.5px -4px #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 1.4rem;
+}
+
+main .configs-div #time-source { width: 195px; }
+main .configs-div #time-zone { width: 300px; }
+main .configs-div #time-format { width: 90px; }
+
+main div:nth-child(2) {
+    padding: 10px;
+    display: flex;
+    column-gap: 10px;
+}
+
+main div:nth-child(2) .time {
+    font-size: 10rem;
+    font-weight: 500;
+    line-height: 1;
+
+}
+
+main div:nth-child(2) .am-pm-symbol, 
+main .date {
+    font-weight: 500;
+    font-size: 2rem;
+}
