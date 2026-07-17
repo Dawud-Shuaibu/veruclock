@@ -14,7 +14,17 @@ function getLocalTimeAndDate(): void {
     const timeMins: number = dateAndTime.getMinutes();
     const timeSecs: number = dateAndTime.getSeconds();
 
-    time.innerText = `${timeHour}:${timeMins}:${timeSecs}`;
+    function leadingZero (num: number): string | number {
+        let time: string = String(num);
+        if (time.length === 1) {
+            return `<span>0</span>${num}`;
+        } else {
+            return num;
+        }
+    };
+
+
+    time.innerHTML = `${leadingZero(timeHour)}:${leadingZero(timeMins)}:${leadingZero(timeSecs)}`;
 
     if (timeHour >= 12) 
         amPmSymbol.innerText = 'pm';
