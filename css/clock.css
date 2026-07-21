@@ -53,7 +53,7 @@ main .configs-div #time-format {
     font-size: 1.4rem;
 }
 
-main .configs-div #time-source { width: 195px; }
+main .configs-div #time-source { width: 145px; }
 main .configs-div #time-zone { width: 300px; }
 main .configs-div #time-format { width: 90px; }
 
